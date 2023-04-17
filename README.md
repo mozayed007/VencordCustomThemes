@@ -1,2 +1,2 @@
 # VencordCustomThemes
-CSS Themes
+CSS Themes for Discord Vencord.
