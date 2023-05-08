@@ -67,7 +67,7 @@
   --offline-color: #808080;
   --main-font: gg sans;
   --code-font: Consolas;
-  --channels-width: 180px;
+  --channels-width: 150px;
   --members-width: 240px;
   --backdrop-overlay: rgba(0,0,0,0.8);
   --backdrop-image: var(--background-image);
@@ -85,8 +85,8 @@
   --bd-blue: var(--main-color);
   --bd-blue-hover: var(--hover-color);
   --bd-blue-active: var(--hover-color);
-  --HSL-server-icon-size: 40px; /* Size of the server icons | DEFAULT: 40px */
-  --HSL-server-spacing: 10px; /* Spacing between each server icon | DEFAULT: 10px */
+  --HSL-server-icon-size: 50px; /* Size of the server icons | DEFAULT: 40px */
+  --HSL-server-spacing: 15px; /* Spacing between each server icon | DEFAULT: 10px */
   --HSL-server-direction: column; /* Direction of the server list. | OPTIONS: column, column-reverse | DEFAULT: column */
   --HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
 }
