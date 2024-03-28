@@ -309,11 +309,11 @@
   max-width: unset;
   white-space: nowrap;
   margin-left: calc(var(--server-size) / -1 - 20px);
-  bottom: calc(var(--server-size) - 10px);
+  top: calc(var(--server-size) - 10px);
 }
 #app-mount [class*=listItemTooltip] [class*=tooltipPointer] {
   transform: rotate(180deg);
-  bottom: -5px !important;
+  top: -5px !important;
   right: unset;
   left: 13px;
   z-index: 1;
@@ -321,7 +321,7 @@
 #app-mount .friendsOnline-2JkivW {
   position: absolute;
   transform: translate(-50%, 50%);
-  bottom: calc(-50% + var(--server-spacing));
+  top: calc(-50% + var(--server-spacing));
   left: -50%;
   width: calc(var(--server-size) + var(--server-spacing));
   display: flex;
@@ -330,11 +330,11 @@
 #app-mount .guilds__2b93a.content-Pph8t6,
 #app-mount .BF-folderSidebar {
   position: absolute !important;
-  bottom: calc(var(--server-container) * 2) !important;
+  top: calc(var(--server-container) * 2) !important;
 }
 #app-mount .guilds__2b93a.content-Pph8t6:not(.closed-j55_T-) + .base__3e6af,
 #app-mount .BF-folderSidebar:not(.closed-j55_T-) + .base__3e6af {
-  bottom: calc(var(--server-container) * 2.5) !important;
+  top: calc(var(--server-container) * 2.5) !important;
 }
 #app-mount .guilds__2b93a .frame-oXWS21[class*=listItem] {
   height: var(--server-size) !important;
@@ -352,7 +352,7 @@
   text-align: center;
 }
 #app-mount .BF-folderSidebar {
-  bottom: calc(var(--server-container)) !important;
+  top: calc(var(--server-container)) !important;
 }
 #app-mount .serverCountWrap-k8F5De {
   height: var(--server-size);
@@ -368,10 +368,10 @@ html.platform-osx #app-mount .typeMacOS__496b0 {
   width: 100%;
 }
 html.platform-osx #app-mount .base__3e6af {
-  bottom: calc(var(--server-container) + 30px) !important;
+  top: calc(var(--server-container) + 30px) !important;
 }
 html.platform-osx #app-mount #pluginNotice {
-  bottom: 32px;
+  top: 32px;
   z-index: 100000 !important;
 }
 
