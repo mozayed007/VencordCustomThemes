@@ -382,11 +382,10 @@ body.foldercontentopened .base__3e6af {
 .accountProfilePopoutWrapper_af829a {
   left: 0;
 }
-
 /* END HSL Custom CSS */
 
 /* Bottom HSL Custom CSS */
-/* body #app-mount {
+body #app-mount {
 	.app_b1f720 .base__3e6af {
 		top: 0 !important;
 		bottom: var(--server-container) !important;
@@ -426,8 +425,11 @@ body.foldercontentopened .base__3e6af {
 }
 html.platform-osx #app-mount .base__3e6af {
 	top: 32px !important;
-} */
+}
 /* END Bottom HSL Custom CSS */
+
+
+
 /* SETTINGS */
 :root {
   /* ACCENT COLORS */
