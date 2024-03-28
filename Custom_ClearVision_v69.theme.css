@@ -368,10 +368,10 @@ html.platform-osx #app-mount .typeMacOS__496b0 {
   width: 100%;
 }
 html.platform-osx #app-mount .base__3e6af {
-  top: calc(var(--server-container) + 30px) !important;
+  bottom: calc(var(--server-container) + 30px) !important;
 }
 html.platform-osx #app-mount #pluginNotice {
-  top: 32px;
+  bottom: 32px;
   z-index: 100000 !important;
 }
 
