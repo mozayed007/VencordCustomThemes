@@ -20,10 +20,10 @@
 */
 /* IMPORT Main  CSS */
 @import url(https://clearvision.github.io/ClearVision-v6/main.css);
-@import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css');
+/* @import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css'); */
 
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
-@import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
+/* @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");  */
 :root {
   --HSL-server-icon-size: 40px; /* Size of the server icons | DEFAULT: 40px */
   --HSL-server-spacing: 10px; /* Spacing between each server icon | DEFAULT: 10px */
@@ -36,6 +36,49 @@
 /** until bottomhsl.css is updated, you can use this snippet to enable the bottom server list. */
 /*custom temp css solution for bottom server list*/
 /*when bottomhsl.css is updated, you can remove this snippet*/
+/* Bottom HSL Custom CSS */
+body #app-mount {
+	.app_b1f720 .base__3e6af {
+		top: 0 !important;
+		bottom: var(--server-container) !important;
+	}
+	.guilds__2b93a {
+		top: unset !important;
+		left: 100vw;
+		bottom: 0 !important;
+		transform-origin: bottom left;
+		[class*='pill'] {
+			top: unset !important;
+			bottom: calc((var(--server-size) / -1) + (var(--server-size) / 2) - 8px) !important;
+			span {
+				border-radius: 4px 0 0 4px;
+			}
+		}
+	}
+	.guilds__2b93a.content-Pph8t6 {
+		top: unset !important;
+		bottom: var(--server-container) !important;
+		&:not(.closed-j55_T-) + .base__3e6af {
+			top: 0 !important;
+			bottom: calc(var(--server-container) * 2) !important;
+		}
+	}
+	[class*='listItemTooltip'] {
+		position: absolute;
+		white-space: nowrap;
+		top: calc(var(--server-size) / -1 - 30px) !important;
+		margin-left: calc(var(--server-size) / -1 - 20px);
+		[class*='tooltipPointer'] {
+			transform: rotate(0) !important;
+			top: unset !important;
+			bottom: -10px !important;
+		}
+	}
+}
+html.platform-osx #app-mount .base__3e6af {
+	top: 32px !important;
+}
+/* HSL Custom CSS */
 :root {
   --server-size: 50px;
   --server-spacing: 10px;
