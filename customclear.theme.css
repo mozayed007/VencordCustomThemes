@@ -8,11 +8,29 @@
  * @invite 7pNUC9C
  * @BDEditor Clear Vision
 */
+/**
+ * @name Horizontal Server List
+ * @author Gibbu#1211
+ * @version 2.1.0
+ * @description Moves the server list from the left to the top of Discord.
+ * @source https://github.com/DiscordStyles/HorizontalServerList
+ * @invite ZHthyCw
+ * @website https://gibbu.me
+*/
 
-@import url('https://clearvision.github.io/ClearVision-v6/main.css');
 @import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css');
+
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
-@import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
+ @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); */
+:root {
+  --HSL-server-icon-size: 40px; /* Size of the server icons | DEFAULT: 40px */
+  --HSL-server-spacing: 10px; /* Spacing between each server icon | DEFAULT: 10px */
+  --HSL-server-direction: column; /* Direction of the server list. | OPTIONS: column, column-reverse | DEFAULT: column */
+  --HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
+}
+@import url('https://clearvision.github.io/ClearVision-v6/main.css');
+
+
 :root {
   --main-color: #2780e6;
   --hover-color: #1e63b3;
