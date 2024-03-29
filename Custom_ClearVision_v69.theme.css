@@ -25,7 +25,7 @@
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
 :root {
-  --HSL-server-icon-size: 30px;
+  --HSL-server-icon-size: 20px;
   --HSL-server-spacing: 5px;
   --HSL-server-border-radius: 8px;
   --HSL-server-background: rgba(0, 0, 0, 0.3);
