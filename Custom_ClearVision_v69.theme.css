@@ -25,8 +25,8 @@
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
 
-
-@import url("https://discordstyles.github.io/Addons/windows-titlebar.css");
+/* 
+@import url("https://discordstyles.github.io/Addons/windows-titlebar.css"); */
 
 /** until bottomhsl.css is updated, you can use this snippet to enable the bottom server list. */
 /*custom temp css solution for bottom server list*/
