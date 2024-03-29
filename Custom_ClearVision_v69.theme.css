@@ -20,7 +20,7 @@
 */
 /* IMPORT Main  CSS */
 @import url(https://clearvision.github.io/ClearVision-v6/main.css);
-@import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css');
+@import url('https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css');
 
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
