@@ -18,12 +18,12 @@
  * @invite ZHthyCw
  * @website https://gibbu.me
 */
-/* IMPORT Main  CSS */
+/* IMPORT Main  CSS
 @import url(https://clearvision.github.io/ClearVision-v6/main.css);
 @import url('https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css');
 
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
-@import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
+/* @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
 :root {
   --HSL-server-icon-size: 50px;
   --HSL-server-spacing: 15px;
@@ -32,11 +32,9 @@
   --HSL-server-background-hover: rgba(0, 0, 0, 0.5);
   --HSL-server-background-active: rgba(0, 0, 0, 0.7);
   --HSL-server-background-selected: rgba(0, 0, 0, 0.7);
-}
+} */
 /* @import url("https://discordstyles.github.io/Addons/windows-titlebar.css"); */
-
-
-
+ */
 
 
 
