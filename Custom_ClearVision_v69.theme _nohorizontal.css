@@ -8,21 +8,13 @@
  * @invite dHaSxn3
  */
 
-/* Credits to Zerthox for making the original theme. */
-/**
- * @name Horizontal Server List
- * @author Gibbu#1211
- * @version 2.1.0
- * @description Moves the server list from the left to the top of Discord.
- * @source https://github.com/DiscordStyles/HorizontalServerList
- * @invite ZHthyCw
- * @website https://gibbu.me
-*/
+
 /* IMPORT Main  CSS */
 @import url(https://clearvision.github.io/ClearVision-v6/main.css);
-@import url('https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css');
+
 
 /* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
+/*@import url('https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css');*/
 /* @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css"); 
 :root {
   --HSL-server-icon-size: 50px;
