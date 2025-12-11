@@ -73,7 +73,16 @@
   flex-direction: var(--HSL-server-direction);
   justify-content: var(--HSL-server-alignment);
 }
+/* FIX: Force all server icons and folders to rotate upright */
+#app-mount .guilds__5e434 [class*="listItem_"] > * {
+    transform: rotate(90deg) !important;
+}
 
+/* Optional: Fix spacing if items look squished after rotation */
+#app-mount .guilds__5e434 [class*="listItem_"] {
+    margin-bottom: 0px !important;
+    margin-right: 10px !important; /* Adjust spacing between servers here */
+}
 .container__5e434 > div[style]:not(.base__5e434) {
   width: 100vw !important;
   height: var(--custom-guild-list-width) !important;
