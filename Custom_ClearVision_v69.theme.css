@@ -61,7 +61,9 @@
 #app-mount .tree_ef3116 {
   padding-top: var(--HSL-top-padding, var(--size-sm));
 }
-
+#app-mount .guilds__5e434 .wrapper_cc5dd2 {
+  transform: rotate(90deg);
+}
 /* #app-mount .wrapper_cc5dd2 {
   rotate: 90deg;
 } */
