@@ -22,7 +22,7 @@
 @import url(https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css);
 /* @import url('https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css'); */
 
-/* Bottom HorizontalServerList. Simply remove the comments surrounding the @import to enable it. */
+/* Bottom HorizontalServerList.Simply remove the comments surrounding the @import to enable it. */
 
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
 :root {
@@ -62,9 +62,9 @@
   padding-top: var(--HSL-top-padding, var(--size-sm));
 }
 
-#app-mount .wrapper_cc5dd2 {
+/* #app-mount .wrapper_cc5dd2 {
   rotate: 90deg;
-}
+} */
 
 #app-mount .itemsContainer_ef3116,
 #app-mount .stack_dbd263 {
