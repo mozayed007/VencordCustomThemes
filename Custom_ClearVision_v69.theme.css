@@ -104,6 +104,11 @@
   margin-bottom: calc(var(--custom-guild-list-width) * 2);
 } */
 
+/* HSL server icons fix */
+[aria-label="Servers"] .wrapper__6e9f8 {
+  rotate: -90deg;
+}
+
 :root {
   --HSL-server-direction: column; /* Direction of the server list. | OPTIONS: column, column-reverse | DEFAULT: column */
   --HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
