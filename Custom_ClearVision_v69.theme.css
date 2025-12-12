@@ -47,7 +47,10 @@
   border-radius: 0;
   overflow: visible !important;
 }
-
+/* FIX: Force all server icons and folders to rotate upright */
+#app-mount .guilds__5e434 [class*="listItem_"] > * {
+    transform: rotate(90deg) !important;
+}
 #app-mount .guilds__5e434 {
   transform-origin: top left;
   rotate: -90deg;
