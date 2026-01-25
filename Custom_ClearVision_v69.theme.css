@@ -91,16 +91,16 @@
   height: var(--serverlist-offset) !important;
   position: absolute;
   top: unset !important;
-  bottom: calc(var(--serverlist-offset) * 2) !important;
+  bottom: 0 !important;
   pointer-events: none;
   z-index: 1;
 }
 .container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
-  top: calc(100% + var(--serverlist-offset) * 2) !important;
+  top: calc(100% + var(--serverlist-offset)) !important;
   pointer-events: all;
 }
 .container__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
-  margin-bottom: calc(var(--serverlist-offset) * 2) !important;
+  margin-bottom: var(--serverlist-offset) !important;
 }
 /* ========================================================== */
 /* HSL CONFIGURATION */
