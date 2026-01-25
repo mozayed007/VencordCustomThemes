@@ -218,7 +218,7 @@
    This forces the sidebar (Channels + User Panel) to stop
    exactly where the bottom server list begins, with no gap. */
 #app-mount .sidebar__5e434 {
-  padding-bottom: 0px !important;
+  padding-bottom: 100px !important;
 }
 /* 3. ENSURE USER PANEL POSITION
    Ensures the User Panel sits flush at the bottom of the sidebar
