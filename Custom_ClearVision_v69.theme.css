@@ -7,9 +7,7 @@
  * @website https://clearvision.github.io
  * @invite dHaSxn3
  */
-
 /* Credits to Zerthox for making the original theme. */
-
 /**
  * @name Horizontal Server List
  * @author Gibbu#1211
@@ -19,69 +17,59 @@
  * @invite ZHthyCw
  * @website https://gibbu.me
  */
-
 /* IMPORT Main CSS */
 @import url("https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css");
 @import url("https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css");
-
 /* Bottom HorizontalServerList */
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
-
 /* ========================================================== */
-/* HORIZONTAL SERVER LIST FIX (BOTTOM - SLIM VERSION)       */
+/* HORIZONTAL SERVER LIST FIX (BOTTOM - SLIM VERSION) */
 /* ========================================================== */
-
 :root {
   --notices-height: 36px;
   /* Reduced from 72px to 60px for a slimmer look */
-  --serverlist-offset: 60px;
+  --serverlist-offset: 120px;
 }
-
 /* 1. Push CHAT content up */
 .base__5e434[data-fullscreen="false"] .content__5e434 {
   margin-bottom: var(--serverlist-offset) !important;
   margin-top: 0 !important;
   overflow: visible !important;
 }
-
 /* 2. Push SIDEBAR (User/Mic Panels) up so they aren't covered */
 #app-mount .sidebar__5e434 {
   margin-bottom: var(--serverlist-offset) !important;
   border-radius: 0;
   overflow: visible !important;
 }
-
 :fullscreen .content__5e434 {
   margin: 0 !important;
 }
-
 /* 3. Position the Server List EXACTLY at the bottom */
 #app-mount .guilds__5e434 {
   transform-origin: top left;
   rotate: -90deg;
-  
+ 
   /* Length of the bar (visual width) */
   height: 100vw !important;
-  
+ 
   /* Thickness of the bar (visual height) - Force it to match offset */
   width: var(--serverlist-offset) !important;
-  
+ 
   /* Anchor to the bottom-left corner of the screen */
   top: 100vh !important;
   left: 0 !important;
   bottom: unset !important;
   right: unset !important;
-  
+ 
   position: absolute !important;
-  
+ 
   /* Ensure it sits on top of other elements if needed */
   z-index: 1000;
 }
-
 #app-mount .tree_ef3116 {
   padding-top: var(--HSL-top-padding, var(--size-sm));
 }
-
 /* Fix Icon Rotations */
 #app-mount .wrapper__6e9f8,
 #app-mount .folderPreview__48112,
@@ -90,21 +78,17 @@
 #app-mount .upperBadge_cc5dd2 {
   rotate: 90deg;
 }
-
 #app-mount .childWrapper__6e9f8 {
   rotate: 0deg;
 }
-
 #app-mount .itemsContainer_ef3116,
 #app-mount .stack_dbd263 {
   flex-direction: var(--HSL-server-direction);
   justify-content: var(--HSL-server-alignment);
 }
-
 #app-mount .notice__6e2b9 {
   height: var(--notices-height);
 }
-
 /* Adjust the invisible blocker to match the new bottom position */
 .container__5e434 > div[style]:not(.base__5e434) {
   width: 100vw !important;
@@ -115,160 +99,148 @@
   pointer-events: none;
   z-index: 1;
 }
-
 .container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
   pointer-events: all;
 }
-
 /* ========================================================== */
-/* HSL CONFIGURATION                    */
+/* HSL CONFIGURATION */
 /* ========================================================== */
-
 :root {
-  --HSL-server-icon-size: 40px; /* Reduced slightly to fit slim bar */
-  --HSL-server-spacing: 15px;
+  --HSL-server-icon-size: 80px; /* Increased to better fit taller 120px bar */
+  --HSL-server-spacing: 20px;
   --HSL-server-border-radius: 25px;
   --HSL-server-background: rgba(0, 0, 0, 0.4);
   --HSL-server-background-hover: rgba(0, 0, 0, 0.5);
   --HSL-server-background-active: rgba(0, 0, 0, 0.7);
   --HSL-server-background-selected: rgba(0, 0, 0, 0.7);
-  --HSL-server-direction: column; 
+  --HSL-server-direction: column;
   --HSL-server-alignment: flex-start;
 }
-
 /* ========================================================== */
-/* CLEARVISION SETTINGS                      */
+/* CLEARVISION SETTINGS */
 /* ========================================================== */
-
 :root {
   /* ACCENT COLORS */
-  --main-color: #2780e6; 
-  --hover-color: #1e63b3; 
-  --success-color: #43b581; 
-  --danger-color: #982929; 
-  --url-color: var(--main-color); 
-
+  --main-color: #2780e6;
+  --hover-color: #1e63b3;
+  --success-color: #43b581;
+  --danger-color: #982929;
+  --url-color: var(--main-color);
   /* STATUS COLORS */
-  --online-color: #43b581; 
-  --idle-color: #faa61a; 
-  --dnd-color: #982929; 
-  --streaming-color: #593695; 
-  --offline-color: #808080; 
-
+  --online-color: #43b581;
+  --idle-color: #faa61a;
+  --dnd-color: #982929;
+  --streaming-color: #593695;
+  --offline-color: #808080;
   /* GENERAL */
-  --main-font: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif; 
-  --code-font: Consolas, Liberation Mono, Menlo, Courier, monospace; 
-  --text-normal: rgb(220, 221, 222); 
-  --text-muted: rgb(114, 118, 125); 
-  --channels-width: 220px; 
-  --members-width: 240px; 
-
+  --main-font: gg sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --code-font: Consolas, Liberation Mono, Menlo, Courier, monospace;
+  --text-normal: rgb(220, 221, 222);
+  --text-muted: rgb(114, 118, 125);
+  --channels-width: 220px;
+  --members-width: 240px;
   /* APP BACKGROUND */
-  --background-shading: 100%; 
-  --background-overlay: rgba(0, 0, 0, 0.6); 
-  --background-image: url("https://clearvision.github.io/images/sapphire.jpg"); 
-  --background-position: center; 
-  --background-size: cover; 
-  --background-repeat: no-repeat; 
-  --background-attachment: fixed; 
-  --background-brightness: 100%; 
-  --background-contrast: 100%; 
-  --background-saturation: 100%; 
-  --background-invert: 0%; 
-  --background-grayscale: 0%; 
-  --background-sepia: 0%; 
-  --background-blur: 0px; 
-
+  --background-shading: 100%;
+  --background-overlay: rgba(0, 0, 0, 0.6);
+  --background-image: url("https://clearvision.github.io/images/sapphire.jpg");
+  --background-position: center;
+  --background-size: cover;
+  --background-repeat: no-repeat;
+  --background-attachment: fixed;
+  --background-brightness: 100%;
+  --background-contrast: 100%;
+  --background-saturation: 100%;
+  --background-invert: 0%;
+  --background-grayscale: 0%;
+  --background-sepia: 0%;
+  --background-blur: 0px;
   /* HOME BUTTON ICON */
-  --home-icon: url("https://clearvision.github.io/icons/discord.svg"); 
-  --home-position: center; 
-  --home-size: 40px; 
-
+  --home-icon: url("https://clearvision.github.io/icons/discord.svg");
+  --home-position: center;
+  --home-size: 40px;
   /* CHANNEL COLORS */
-  --channel-unread: var(--main-color); 
-  --channel-color: rgba(255, 255, 255, 0.3); 
-  --channel-text-selected: #fff; 
-  --muted-color: rgba(255, 255, 255, 0.1); 
-
+  --channel-unread: var(--main-color);
+  --channel-color: rgba(255, 255, 255, 0.3);
+  --channel-text-selected: #fff;
+  --muted-color: rgba(255, 255, 255, 0.1);
   /* MODAL BACKDROP */
-  --backdrop-overlay: rgba(0, 0, 0, 0.8); 
-  --backdrop-image: var(--background-image); 
-  --backdrop-position: var(--background-position); 
-  --backdrop-size: var(--background-size); 
-  --backdrop-repeat: var(--background-repeat); 
-  --backdrop-attachment: var(--background-attachment); 
-  --backdrop-brightness: var(--background-brightness); 
-  --backdrop-contrast: var(--background-contrast); 
-  --backdrop-saturation: var(--background-saturation); 
-  --backdrop-invert: var(--background-invert); 
-  --backdrop-grayscale: var(--background-grayscale); 
-  --backdrop-sepia: var(--background-sepia); 
-  --backdrop-blur: var(--background-blur); 
-
+  --backdrop-overlay: rgba(0, 0, 0, 0.8);
+  --backdrop-image: var(--background-image);
+  --backdrop-position: var(--background-position);
+  --backdrop-size: var(--background-size);
+  --backdrop-repeat: var(--background-repeat);
+  --backdrop-attachment: var(--background-attachment);
+  --backdrop-brightness: var(--background-brightness);
+  --backdrop-contrast: var(--background-contrast);
+  --backdrop-saturation: var(--background-saturation);
+  --backdrop-invert: var(--background-invert);
+  --backdrop-grayscale: var(--background-grayscale);
+  --backdrop-sepia: var(--background-sepia);
+  --backdrop-blur: var(--background-blur);
   /* USER POPOUT BACKGROUND */
-  --user-popout-image: var(--background-image); 
-  --user-popout-position: var(--background-position); 
-  --user-popout-size: var(--background-size); 
-  --user-popout-repeat: var(--background-repeat); 
-  --user-popout-attachment: var(--background-attachment); 
-  --user-popout-brightness: var(--background-brightness); 
-  --user-popout-contrast: var(--background-contrast); 
-  --user-popout-saturation: var(--background-saturation); 
-  --user-popout-invert: var(--background-invert); 
-  --user-popout-grayscale: var(--background-grayscale); 
-  --user-popout-sepia: var(--background-sepia); 
-  --user-popout-blur: calc(var(--background-blur) + 3px); 
-  --user-popout-overlay: rgba(0, 0, 0, 0.6); 
-
+  --user-popout-image: var(--background-image);
+  --user-popout-position: var(--background-position);
+  --user-popout-size: var(--background-size);
+  --user-popout-repeat: var(--background-repeat);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-brightness: var(--background-brightness);
+  --user-popout-contrast: var(--background-contrast);
+  --user-popout-saturation: var(--background-saturation);
+  --user-popout-invert: var(--background-invert);
+  --user-popout-grayscale: var(--background-grayscale);
+  --user-popout-sepia: var(--background-sepia);
+  --user-popout-blur: calc(var(--background-blur) + 3px);
+  --user-popout-overlay: rgba(0, 0, 0, 0.6);
   /* USER MODAL BACKGROUND */
-  --user-modal-image: var(--background-image); 
-  --user-modal-position: var(--background-position); 
-  --user-modal-size: var(--background-size); 
-  --user-modal-repeat: var(--background-repeat); 
-  --user-modal-attachment: var(--background-attachment); 
-  --user-modal-brightness: var(--background-brightness); 
-  --user-modal-contrast: var(--background-contrast); 
-  --user-modal-saturation: var(--background-saturation); 
-  --user-modal-invert: var(--background-invert); 
-  --user-modal-grayscale: var(--background-grayscale); 
-  --user-modal-sepia: var(--background-sepia); 
-  --user-modal-blur: calc(var(--background-blur) + 3px); 
-
+  --user-modal-image: var(--background-image);
+  --user-modal-position: var(--background-position);
+  --user-modal-size: var(--background-size);
+  --user-modal-repeat: var(--background-repeat);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-brightness: var(--background-brightness);
+  --user-modal-contrast: var(--background-contrast);
+  --user-modal-saturation: var(--background-saturation);
+  --user-modal-invert: var(--background-invert);
+  --user-modal-grayscale: var(--background-grayscale);
+  --user-modal-sepia: var(--background-sepia);
+  --user-modal-blur: calc(var(--background-blur) + 3px);
   /* THEME BD COLORS */
-  --bd-blue: var(--main-color); 
-  --bd-blue-hover: var(--hover-color); 
-  --bd-blue-active: var(--hover-color); 
+  --bd-blue: var(--main-color);
+  --bd-blue-hover: var(--hover-color);
+  --bd-blue-active: var(--hover-color);
 }
-
 /* ========================================================== */
-/*           FIX FOR BOTTOM BAR HEIGHT & OVERLAP              */
+/* FIX FOR BOTTOM BAR HEIGHT & OVERLAP */
 /* ========================================================== */
-
 :root {
-  /* 1. REDUCE VERTICAL HEIGHT
-     Default was 72px. We change it to 60px to tightly fit 
-     the 50px icons + padding. Adjust this number if you want it thinner/thicker. */
+  /* Set to your preferred taller height */
   --serverlist-offset: 120px !important;
 }
-
 /* 2. FIX SIDEBAR HEIGHT
-     This forces the sidebar (Channels + User Panel) to stop 
-     exactly where the bottom server list begins. */
+   This forces the sidebar (Channels + User Panel) to stop
+   exactly where the bottom server list begins, with no gap. */
 #app-mount .sidebar__5e434 {
   height: calc(100vh - var(--serverlist-offset)) !important;
-  margin-bottom: 10 !important;
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
 }
-
 /* 3. ENSURE USER PANEL POSITION
-     Ensures the User Panel sits flush at the bottom of the sidebar
-     and hasn't been pushed up by extra margins. */
+   Ensures the User Panel sits flush at the bottom of the sidebar
+   with no extra gaps or borders. */
 div[class^="panels_"] {
-  margin-bottom: 10 !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  border-top: none !important;
   border-bottom: none !important;
+  padding-top: 0px !important;
 }
-
+/* Additional fix for any gap above panels (channel container) */
+.sidebar__5e434 > div:not([class^="panels_"]) {
+  margin-bottom: 0px !important;
+  padding-bottom: 0px !important;
+}
 /* 4. RE-APPLY MARGIN TO CONTENT
-     Updates the main window to respect the new 60px height. */
+   Updates the main window to respect the new height. */
 .base__5e434[data-fullscreen="false"] .content__5e434 {
   margin-bottom: var(--serverlist-offset) !important;
 }
