@@ -19,73 +19,21 @@
  */
 /* IMPORT Main CSS */
 @import url(https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css);
-/* NOTE: Do NOT import HorizontalServerList.theme.css - it conflicts with bottom positioning */
-/* Bottom HorizontalServerList addon only */
+/* Import base HorizontalServerList CSS first, then bottomhsl.css to override for bottom positioning */
+@import url("https://discordstyles.github.io/HorizontalServerList/HorizontalServerList.css");
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
 
 /* ========================================================== */
-/* HORIZONTAL SERVER LIST - BOTTOM CONFIGURATION (WORKING)   */
+/* HORIZONTAL SERVER LIST - BOTTOM CONFIGURATION              */
 /* ========================================================== */
-
-/* Base HSL CSS with updated class names - BOTTOM configuration */
-.content__5e434 {
-  margin-top: unset;
-  margin-bottom: var(--custom-guild-list-width);
-  overflow: visible !important;
-}
-
-#app-mount .sidebar__5e434 {
-  border-radius: 0;
-  overflow: visible !important;
-}
-
-#app-mount .guilds__5e434 {
-  transform-origin: top left;
-  rotate: -90deg;
-  height: 100vw !important;
-  bottom: unset;
-  position: absolute !important;
-  left: 0;
-  top: calc(100% + var(--custom-guild-list-width));
-}
-
-#app-mount .tree_ef3116 {
-  padding-top: var(--HSL-top-padding, var(--size-sm));
-}
-
-#app-mount .wrapper_cc5dd2 {
-  rotate: 90deg;
-}
-
-#app-mount .itemsContainer_ef3116,
-#app-mount .stack_dbd263 {
-  flex-direction: var(--HSL-server-direction);
-  justify-content: var(--HSL-server-alignment);
-}
-
-.container__5e434 > div[style]:not(.base__5e434) {
-  width: 100vw !important;
-  height: var(--custom-guild-list-width) !important;
-  position: absolute;
-  bottom: calc(var(--custom-guild-list-width) * 2);
-  top: unset;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
-  pointer-events: all;
-  top: calc(100% + var(--custom-guild-list-width) * 2) !important;
-}
-
-.container__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
-  margin-top: unset;
-  margin-bottom: calc(var(--custom-guild-list-width) * 2);
-}
+/* The imports above handle the main HSL logic. */
+/* bottomhsl.css overrides positioning for bottom placement. */
 /* ========================================================== */
 /* HSL CONFIGURATION */
 /* ========================================================== */
 :root {
+  /* CRITICAL: Define the guild list bar width - Discord no longer injects this */
+  --custom-guild-list-width: 72px; /* Discord default server icon row height */
   --HSL-server-icon-size: 50px;
   --HSL-server-spacing: 15px;
   --HSL-server-border-radius: 25px;
