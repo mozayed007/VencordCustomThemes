@@ -248,7 +248,7 @@
   /* 1. REDUCE VERTICAL HEIGHT
      Default was 72px. We change it to 60px to tightly fit 
      the 50px icons + padding. Adjust this number if you want it thinner/thicker. */
-  --serverlist-offset: 60px !important;
+  --serverlist-offset: 50px !important;
 }
 
 /* 2. FIX SIDEBAR HEIGHT
