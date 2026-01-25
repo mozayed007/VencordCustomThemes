@@ -239,3 +239,36 @@
   --bd-blue-hover: var(--hover-color); 
   --bd-blue-active: var(--hover-color); 
 }
+
+/* ========================================================== */
+/*           FIX FOR BOTTOM BAR HEIGHT & OVERLAP              */
+/* ========================================================== */
+
+:root {
+  /* 1. REDUCE VERTICAL HEIGHT
+     Default was 72px. We change it to 60px to tightly fit 
+     the 50px icons + padding. Adjust this number if you want it thinner/thicker. */
+  --serverlist-offset: 60px !important;
+}
+
+/* 2. FIX SIDEBAR HEIGHT
+     This forces the sidebar (Channels + User Panel) to stop 
+     exactly where the bottom server list begins. */
+#app-mount .sidebar__5e434 {
+  height: calc(100vh - var(--serverlist-offset)) !important;
+  margin-bottom: 0 !important;
+}
+
+/* 3. ENSURE USER PANEL POSITION
+     Ensures the User Panel sits flush at the bottom of the sidebar
+     and hasn't been pushed up by extra margins. */
+div[class^="panels_"] {
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+/* 4. RE-APPLY MARGIN TO CONTENT
+     Updates the main window to respect the new 60px height. */
+.base__5e434[data-fullscreen="false"] .content__5e434 {
+  margin-bottom: var(--serverlist-offset) !important;
+}
