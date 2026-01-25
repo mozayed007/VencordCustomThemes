@@ -54,7 +54,7 @@
   rotate: -90deg;
   height: 100vw !important;
   width: var(--serverlist-offset) !important;
-  top: calc(100% + var(--serverlist-offset));
+  top: calc(100vh - var(--serverlist-offset));
   left: 0 !important;
   bottom: unset !important;
   right: unset !important;
@@ -89,30 +89,25 @@
   height: var(--serverlist-offset) !important;
   position: absolute;
   top: unset !important;
-  bottom: calc(var(--serverlist-offset) * 2);
+  bottom: 0 !important;
   pointer-events: none;
   z-index: 1;
 }
 .container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
   pointer-events: all;
-  top: calc(100% + var(--serverlist-offset) * 2) !important;
-}
-.container__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
-  margin-top: unset !important;
-  margin-bottom: calc(var(--serverlist-offset) * 2);
 }
 /* ========================================================== */
 /* HSL CONFIGURATION */
 /* ========================================================== */
 :root {
-  --HSL-server-icon-size: 80px; /* Fits taller bar */
-  --HSL-server-spacing: 20px;
+  --HSL-server-icon-size: 70px; /* Adjusted to fit 120px bar without overflow */
+  --HSL-server-spacing: 10px;
   --HSL-server-border-radius: 25px;
   --HSL-server-background: rgba(0, 0, 0, 0.4);
   --HSL-server-background-hover: rgba(0, 0, 0, 0.5);
   --HSL-server-background-active: rgba(0, 0, 0, 0.7);
   --HSL-server-background-selected: rgba(0, 0, 0, 0.7);
-  --HSL-server-direction: column; /* Change to column-reverse if order is flipped */
+  --HSL-server-direction: column; /* Try column-reverse if servers order is wrong */
   --HSL-server-alignment: flex-start;
 }
 /* ========================================================== */
