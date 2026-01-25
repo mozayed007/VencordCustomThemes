@@ -86,21 +86,17 @@
   height: var(--notices-height);
 }
 /* Adjust the invisible blocker to match the new bottom position */
-.container__5e434 > div[style]:not(.base__5e434) {
-  width: 100vw !important;
-  height: var(--serverlist-offset) !important;
-  position: absolute;
+/* Use .base__5e434 container as per official bottomhsl.css */
+.base__5e434 > div[style]:not(.base__5e434) {
+  bottom: calc(var(--custom-guild-list-width) * 2) !important;
   top: unset !important;
-  bottom: 0 !important;
-  pointer-events: none;
-  z-index: 1;
 }
-.container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
-  top: calc(100% + var(--serverlist-offset)) !important;
-  pointer-events: all;
+.base__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
+  top: calc(100% + var(--custom-guild-list-width) * 2) !important;
 }
-.container__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
-  margin-bottom: var(--serverlist-offset) !important;
+.base__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
+  margin-top: unset !important;
+  margin-bottom: calc(var(--custom-guild-list-width) * 2) !important;
 }
 /* ========================================================== */
 /* HSL CONFIGURATION */
