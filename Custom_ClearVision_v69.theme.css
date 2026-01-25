@@ -18,98 +18,82 @@
  * @website https://gibbu.me
  */
 /* IMPORT Main CSS */
-@import url("https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css");
-@import url("https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css");
-/* Bottom HorizontalServerList */
+@import url(https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css);
+/* NOTE: Do NOT import HorizontalServerList.theme.css - it conflicts with bottom positioning */
+/* Bottom HorizontalServerList addon only */
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
+
 /* ========================================================== */
-/* HORIZONTAL SERVER LIST FIX (BOTTOM - UPDATED VERSION) */
+/* HORIZONTAL SERVER LIST - BOTTOM CONFIGURATION (WORKING)   */
 /* ========================================================== */
-:root {
-  --notices-height: 36px;
-  --custom-guild-list-width: calc(
-    var(--HSL-server-icon-size, 70px) + (var(--HSL-server-spacing, 10px) * 2)
-  ); /* Keep bar height aligned to actual icon size */
-  --serverlist-offset: var(--custom-guild-list-width); /* Sync with imports */
-}
-/* 1. Push CHAT content up */
-.base__5e434[data-fullscreen="false"] .content__5e434 {
-  margin-bottom: var(--serverlist-offset) !important;
-  margin-top: unset !important;
+
+/* Base HSL CSS with updated class names - BOTTOM configuration */
+.content__5e434 {
+  margin-top: unset;
+  margin-bottom: var(--custom-guild-list-width);
   overflow: visible !important;
 }
-/* Fullscreen handling */
-:fullscreen .content__5e434 {
-  margin: 0 !important;
-}
-/* 2. Push SIDEBAR (User/Mic Panels) up so they aren't covered */
+
 #app-mount .sidebar__5e434 {
-  margin-bottom: var(--serverlist-offset) !important;
   border-radius: 0;
   overflow: visible !important;
-  display: flex !important;
-  flex-direction: column !important;
 }
-/* 3. Position the Server List EXACTLY at the bottom */
+
 #app-mount .guilds__5e434 {
   transform-origin: top left;
   rotate: -90deg;
   height: 100vw !important;
-  width: var(--serverlist-offset) !important;
-  top: calc(100% + var(--serverlist-offset));
-  left: 0 !important;
-  bottom: unset !important;
-  right: unset !important;
+  bottom: unset;
   position: absolute !important;
-  z-index: 1000;
+  left: 0;
+  top: calc(100% + var(--custom-guild-list-width));
 }
+
 #app-mount .tree_ef3116 {
   padding-top: var(--HSL-top-padding, var(--size-sm));
 }
-/* Fix Icon Rotations */
-#app-mount .wrapper__6e9f8,
-#app-mount .folderPreview__48112,
-#app-mount .folderIconWrapper__48112,
-#app-mount .lowerBadge_cc5dd2,
-#app-mount .upperBadge_cc5dd2 {
+
+#app-mount .wrapper_cc5dd2 {
   rotate: 90deg;
 }
-#app-mount .childWrapper__6e9f8 {
-  rotate: 0deg;
-}
+
 #app-mount .itemsContainer_ef3116,
 #app-mount .stack_dbd263 {
   flex-direction: var(--HSL-server-direction);
   justify-content: var(--HSL-server-alignment);
 }
-#app-mount .notice__6e2b9 {
-  height: var(--notices-height);
+
+.container__5e434 > div[style]:not(.base__5e434) {
+  width: 100vw !important;
+  height: var(--custom-guild-list-width) !important;
+  position: absolute;
+  bottom: calc(var(--custom-guild-list-width) * 2);
+  top: unset;
+  pointer-events: none;
+  z-index: 1;
 }
-/* Adjust the invisible blocker to match the new bottom position */
-/* Use .base__5e434 container as per official bottomhsl.css */
-.base__5e434 > div[style]:not(.base__5e434) {
-  bottom: calc(var(--custom-guild-list-width) * 2) !important;
-  top: unset !important;
-}
-.base__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
+
+.container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
+  pointer-events: all;
   top: calc(100% + var(--custom-guild-list-width) * 2) !important;
 }
-.base__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
-  margin-top: unset !important;
-  margin-bottom: calc(var(--custom-guild-list-width) * 2) !important;
+
+.container__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
+  margin-top: unset;
+  margin-bottom: calc(var(--custom-guild-list-width) * 2);
 }
 /* ========================================================== */
 /* HSL CONFIGURATION */
 /* ========================================================== */
 :root {
-  --HSL-server-icon-size: 70px; /* Adjusted to fit 120px bar without overflow */
-  --HSL-server-spacing: 10px;
+  --HSL-server-icon-size: 50px;
+  --HSL-server-spacing: 15px;
   --HSL-server-border-radius: 25px;
-  --HSL-server-background: rgba(0, 0, 0, 0.4);
+  --HSL-server-background: rgba(0, 0, 0, 0.3);
   --HSL-server-background-hover: rgba(0, 0, 0, 0.5);
   --HSL-server-background-active: rgba(0, 0, 0, 0.7);
   --HSL-server-background-selected: rgba(0, 0, 0, 0.7);
-  --HSL-server-direction: column; /* Try column-reverse if servers order is wrong */
+  --HSL-server-direction: column;
   --HSL-server-alignment: flex-start;
 }
 /* ========================================================== */
@@ -204,30 +188,4 @@
   --bd-blue: var(--main-color);
   --bd-blue-hover: var(--hover-color);
   --bd-blue-active: var(--hover-color);
-}
-/* ========================================================== */
-/* FIX FOR BOTTOM BAR HEIGHT & OVERLAP */
-/* ========================================================== */
-/* Sidebar fixes for no gaps */
-#app-mount .sidebar__5e434 {
-  padding-bottom: 0px !important;
-}
-/* User panel flush positioning */
-div[class^="panels_"] {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-  border-top: none !important;
-  border-bottom: none !important;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-/* Channel container fill (removes gap above panels) */
-.sidebar__5e434 > div:not([class^="panels_"]) {
-  flex: 1 1 auto !important;
-  margin-bottom: 0px !important;
-  padding-bottom: 0px !important;
-}
-/* Hide any divider lines */
-div[class^="panels_"]::before {
-  display: none !important;
 }
