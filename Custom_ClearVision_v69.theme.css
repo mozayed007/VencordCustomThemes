@@ -24,23 +24,30 @@
 @import url("https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css");
 @import url("https://raw.githubusercontent.com/DiscordStyles/HorizontalServerList/deploy/HorizontalServerList.theme.css");
 
-/* Bottom HorizontalServerList. */
+/* Bottom HorizontalServerList */
 @import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
 
 /* ========================================================== */
-/* HORIZONTAL SERVER LIST FIX (BOTTOM VERSION)              */
+/* HORIZONTAL SERVER LIST FIX (BOTTOM - SLIM VERSION)       */
 /* ========================================================== */
 
 :root {
   --notices-height: 36px;
-  /* Use fallback of 72px if custom-guild-list-width is missing */
-  --serverlist-offset: var(--custom-guild-list-width, 72px);
+  /* Reduced from 72px to 60px for a slimmer look */
+  --serverlist-offset: 60px;
 }
 
-/* 1. Push content UP from the bottom so the server list doesn't cover it */
+/* 1. Push CHAT content up */
 .base__5e434[data-fullscreen="false"] .content__5e434 {
   margin-bottom: var(--serverlist-offset) !important;
   margin-top: 0 !important;
+  overflow: visible !important;
+}
+
+/* 2. Push SIDEBAR (User/Mic Panels) up so they aren't covered */
+#app-mount .sidebar__5e434 {
+  margin-bottom: var(--serverlist-offset) !important;
+  border-radius: 0;
   overflow: visible !important;
 }
 
@@ -48,33 +55,34 @@
   margin: 0 !important;
 }
 
-#app-mount .sidebar__5e434 {
-  border-radius: 0;
-  overflow: visible !important;
-}
-
-/* 2. Position the Server List at the BOTTOM */
+/* 3. Position the Server List EXACTLY at the bottom */
 #app-mount .guilds__5e434 {
   transform-origin: top left;
   rotate: -90deg;
+  
+  /* Length of the bar (visual width) */
   height: 100vw !important;
   
-  /* Unset Top/Bottom from previous themes */
+  /* Thickness of the bar (visual height) - Force it to match offset */
+  width: var(--serverlist-offset) !important;
+  
+  /* Anchor to the bottom-left corner of the screen */
+  top: 100vh !important;
+  left: 0 !important;
   bottom: unset !important;
   right: unset !important;
   
-  /* Calculate Top position to force it to the bottom of the screen */
-  /* (Viewport Height - Bar Thickness) */
-  top: calc(100vh - var(--serverlist-offset)) !important;
-  left: 0;
-  
   position: absolute !important;
+  
+  /* Ensure it sits on top of other elements if needed */
+  z-index: 1000;
 }
 
 #app-mount .tree_ef3116 {
   padding-top: var(--HSL-top-padding, var(--size-sm));
 }
 
+/* Fix Icon Rotations */
 #app-mount .wrapper__6e9f8,
 #app-mount .folderPreview__48112,
 #app-mount .folderIconWrapper__48112,
@@ -97,7 +105,7 @@
   height: var(--notices-height);
 }
 
-/* 3. Adjust the "Invisible Blocker" to be at the bottom */
+/* Adjust the invisible blocker to match the new bottom position */
 .container__5e434 > div[style]:not(.base__5e434) {
   width: 100vw !important;
   height: var(--serverlist-offset) !important;
@@ -117,10 +125,10 @@
 /* ========================================================== */
 
 :root {
-  --HSL-server-icon-size: 50px;
+  --HSL-server-icon-size: 40px; /* Reduced slightly to fit slim bar */
   --HSL-server-spacing: 15px;
   --HSL-server-border-radius: 25px;
-  --HSL-server-background: rgba(0, 0, 0, 0.3);
+  --HSL-server-background: rgba(0, 0, 0, 0.4);
   --HSL-server-background-hover: rgba(0, 0, 0, 0.5);
   --HSL-server-background-active: rgba(0, 0, 0, 0.7);
   --HSL-server-background-selected: rgba(0, 0, 0, 0.7);
