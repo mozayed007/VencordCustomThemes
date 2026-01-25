@@ -27,8 +27,8 @@
 /* ========================================================== */
 :root {
   --notices-height: 36px;
-  /* Reduced from 72px to 60px for a slimmer look */
-  --serverlist-offset: 120px;
+  --custom-guild-list-width: 120px; /* Controls bar height; adjust here */
+  --serverlist-offset: var(--custom-guild-list-width); /* Sync with import */
 }
 /* 1. Push CHAT content up */
 .base__5e434[data-fullscreen="false"] .content__5e434 {
@@ -41,14 +41,16 @@
   margin-bottom: var(--serverlist-offset) !important;
   border-radius: 0;
   overflow: visible !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 :fullscreen .content__5e434 {
   margin: 0 !important;
 }
 /* 3. Position the Server List EXACTLY at the bottom */
 #app-mount .guilds__5e434 {
-  transform-origin: top left;
-  rotate: -90deg;
+  transform-origin: bottom left;
+  rotate: 90deg;
  
   /* Length of the bar (visual width) */
   height: 100vw !important;
@@ -57,7 +59,7 @@
   width: var(--serverlist-offset) !important;
  
   /* Anchor to the bottom-left corner of the screen */
-  top: 100vh !important;
+  top: 100% !important;
   left: 0 !important;
   bottom: unset !important;
   right: unset !important;
@@ -76,7 +78,7 @@
 #app-mount .folderIconWrapper__48112,
 #app-mount .lowerBadge_cc5dd2,
 #app-mount .upperBadge_cc5dd2 {
-  rotate: 90deg;
+  rotate: -90deg;
 }
 #app-mount .childWrapper__6e9f8 {
   rotate: 0deg;
@@ -113,7 +115,7 @@
   --HSL-server-background-hover: rgba(0, 0, 0, 0.5);
   --HSL-server-background-active: rgba(0, 0, 0, 0.7);
   --HSL-server-background-selected: rgba(0, 0, 0, 0.7);
-  --HSL-server-direction: column;
+  --HSL-server-direction: column-reverse; /* Reverse for bottom to keep left-to-right flow */
   --HSL-server-alignment: flex-start;
 }
 /* ========================================================== */
@@ -212,16 +214,10 @@
 /* ========================================================== */
 /* FIX FOR BOTTOM BAR HEIGHT & OVERLAP */
 /* ========================================================== */
-:root {
-  /* Set to your preferred taller height */
-  --serverlist-offset: 100px !important;
-}
 /* 2. FIX SIDEBAR HEIGHT
    This forces the sidebar (Channels + User Panel) to stop
    exactly where the bottom server list begins, with no gap. */
 #app-mount .sidebar__5e434 {
-  height: calc(100vh - var(--serverlist-offset)) !important;
-  margin-bottom: 0px !important;
   padding-bottom: 0px !important;
 }
 /* 3. ENSURE USER PANEL POSITION
@@ -236,6 +232,7 @@ div[class^="panels_"] {
 }
 /* Additional fix for any gap above panels (channel container) */
 .sidebar__5e434 > div:not([class^="panels_"]) {
+  flex: 1 1 auto !important;
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
 }
