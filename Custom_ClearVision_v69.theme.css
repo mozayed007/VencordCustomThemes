@@ -214,7 +214,7 @@
 /* ========================================================== */
 :root {
   /* Set to your preferred taller height */
-  --serverlist-offset: 120px !important;
+  --serverlist-offset: 100px !important;
 }
 /* 2. FIX SIDEBAR HEIGHT
    This forces the sidebar (Channels + User Panel) to stop
