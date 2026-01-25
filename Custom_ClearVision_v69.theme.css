@@ -54,7 +54,7 @@
   rotate: -90deg;
   height: 100vw !important;
   width: var(--serverlist-offset) !important;
-  top: calc(100vh - var(--serverlist-offset));
+  top: calc(100% - var(--serverlist-offset));
   left: 0 !important;
   bottom: unset !important;
   right: unset !important;
