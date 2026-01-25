@@ -27,7 +27,9 @@
 /* ========================================================== */
 :root {
   --notices-height: 36px;
-  --custom-guild-list-width: 120px; /* Bar height; adjust as needed */
+  --custom-guild-list-width: calc(
+    var(--HSL-server-icon-size, 70px) + (var(--HSL-server-spacing, 10px) * 2)
+  ); /* Keep bar height aligned to actual icon size */
   --serverlist-offset: var(--custom-guild-list-width); /* Sync with imports */
 }
 /* 1. Push CHAT content up */
@@ -54,7 +56,7 @@
   rotate: -90deg;
   height: 100vw !important;
   width: var(--serverlist-offset) !important;
-  top: calc(100% - var(--serverlist-offset));
+  top: calc(100% + var(--serverlist-offset));
   left: 0 !important;
   bottom: unset !important;
   right: unset !important;
@@ -89,12 +91,16 @@
   height: var(--serverlist-offset) !important;
   position: absolute;
   top: unset !important;
-  bottom: 0 !important;
+  bottom: calc(var(--serverlist-offset) * 2) !important;
   pointer-events: none;
   z-index: 1;
 }
 .container__5e434 > div[style]:not(.base__5e434) .guilds__5e434 {
+  top: calc(100% + var(--serverlist-offset) * 2) !important;
   pointer-events: all;
+}
+.container__5e434 > div[style]:not(.base__5e434) + .base__5e434 .content__5e434 {
+  margin-bottom: calc(var(--serverlist-offset) * 2) !important;
 }
 /* ========================================================== */
 /* HSL CONFIGURATION */
