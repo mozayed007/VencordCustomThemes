@@ -19,15 +19,124 @@
  */
 /* IMPORT Main CSS */
 @import url(https://raw.githubusercontent.com/ClearVision/ClearVision-v7/refs/heads/master/ClearVision-v7-Vencord.css);
-/* Import base HorizontalServerList CSS first, then bottomhsl.css to override for bottom positioning */
-@import url("https://discordstyles.github.io/HorizontalServerList/HorizontalServerList.css");
-@import url("https://discordstyles.github.io/HorizontalServerList/bottomhsl.css");
+/*
+ * HorizontalServerList is inlined below instead of imported.
+ * The upstream files at discordstyles.github.io still target the old Discord
+ * class hashes (__5e434, _ef3116, ...), which a Discord update renamed in Nov 2026.
+ * When Discord renames them again, update the class map below.
+ *
+ * Class map (old -> new):
+ *   base/content/sidebar/guilds/container __5e434 -> _pog62O
+ *   tree _ef3116                                -> _5dqHTG
+ *   itemsContainer _ef3116 / stack _dbd263      -> stack_TWWX0S (itemsContainer no longer exists)
+ *   wrapper/childWrapper __6e9f8                -> _JJ-hgR
+ *   folderPreview/folderIconWrapper __48112     -> _RTMSuZ
+ *   lowerBadge/upperBadge _cc5dd2               -> _hqZPsU
+ *   notice __6e2b9                              -> notice_Q02kKo
+ */
 
 /* ========================================================== */
-/* HORIZONTAL SERVER LIST - BOTTOM CONFIGURATION              */
+/* HORIZONTAL SERVER LIST - MAIN (inlined from src/main.css)  */
 /* ========================================================== */
-/* The imports above handle the main HSL logic. */
-/* bottomhsl.css overrides positioning for bottom placement. */
+:root {
+  --notices-height: 36px;
+  --serverlist-offset: var(--custom-guild-list-width);
+}
+
+.base_pog62O[data-fullscreen="false"] .content_pog62O {
+  margin-top: var(--serverlist-offset);
+  overflow: visible !important;
+}
+
+:fullscreen .content_pog62O {
+  margin: 0 !important;
+}
+
+.sidebar_pog62O {
+  border-radius: 0;
+  overflow: visible !important;
+}
+
+.guilds_pog62O {
+  transform-origin: 0 0;
+  bottom: unset;
+  left: 0;
+  rotate: -90deg;
+  height: 100vw !important;
+  position: absolute !important;
+
+  & .stack_TWWX0S {
+    flex-direction: var(--HSL-server-direction);
+    justify-content: var(--HSL-server-alignment);
+  }
+}
+
+.tree_5dqHTG {
+  padding-top: var(--HSL-top-padding, var(--size-sm));
+  justify-content: var(--HSL-server-alignment);
+}
+
+.wrapper_JJ-hgR, .folderPreview_RTMSuZ, .folderIconWrapper_RTMSuZ, .lowerBadge_hqZPsU, .upperBadge_hqZPsU {
+  rotate: 90deg;
+}
+
+.childWrapper_JJ-hgR {
+  rotate: 0deg;
+}
+
+.notice_Q02kKo {
+  height: var(--notices-height);
+
+  & + .content_pog62O {
+    --serverlist-offset: calc(var(--notices-height) + var(--custom-guild-list-width));
+  }
+}
+
+.container_pog62O > div[style]:not(.base_pog62O) {
+  top: calc(var(--serverlist-offset) + var(--custom-app-top-bar-height));
+  pointer-events: none;
+  z-index: 1;
+  position: absolute;
+  width: 100vw !important;
+  height: var(--serverlist-offset) !important;
+
+  & .guilds_pog62O {
+    pointer-events: all;
+  }
+
+  & + .base_pog62O .content_pog62O {
+    margin-top: calc(var(--serverlist-offset) * 2);
+  }
+}
+
+/* ========================================================== */
+/* HORIZONTAL SERVER LIST - BOTTOM (inlined from bottomhsl)   */
+/* ========================================================== */
+.base_pog62O[data-fullscreen="false"] .content_pog62O {
+  margin-top: unset;
+  margin-bottom: var(--custom-guild-list-width);
+}
+
+#app-mount {
+  & .guilds_pog62O {
+    top: calc(100% + var(--custom-guild-list-width));
+  }
+}
+
+.base_pog62O > div[style]:not(.base_pog62O) {
+  bottom: calc(var(--custom-guild-list-width) * 2);
+  top: unset;
+
+  & .guilds_pog62O {
+    top: calc(100% + var(--custom-guild-list-width) * 2) !important;
+  }
+
+  & + .base_pog62O .content_pog62O {
+    margin-top: unset;
+    margin-bottom: calc(var(--custom-guild-list-width) * 2);
+  }
+}
+
 /* ========================================================== */
 /* HSL CONFIGURATION */
 /* ========================================================== */
